@@ -18,8 +18,8 @@
     "handler",
     "parser",
     "dependencies",
-    "dependency-graph",
-    "commonjs"
+    "commonjs",
+    "dependency-graph"
   ],
   "engines": {
     "node": ">=0.11.0"
