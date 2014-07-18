@@ -12,6 +12,7 @@ $ npm install neuron-graph --save
 
 ```js
 var graph = require('neuron-graph');
+
 graph(pkg, {
    shrinkwrap: shrinkwrap_object_if_already_have_one,
    dependencyKeys: ['dependencies', 'asyncDependencies']
@@ -20,23 +21,24 @@ graph(pkg, {
 });
 ```
 
+
 ## Options
 
-### shrinkwrap
+### shrinkwrap {Object=}
 
 Shrinkwrap object
 
-### dependencyKeys
+### dependencyKeys {Array.<String>=}
 
 Dependencies will parse during the processing. Default is ['dependencies', 'asyncDependencies']
 
-### stable_only
+### stable_only {boolean=}
 
-Pass to cortex-shrinkwrap
+Pass to cortex-shrinkwrap. Default is `false`.
 
-### ignore_shrink_file
+### ignore_shrink_file {boolean=}
 
-Always regenerate shrinkwrap object even `cortex-shrinkwrap.json` exists.
+Always regenerate shrinkwrap object even `cortex-shrinkwrap.json` exists. Default is `false`.
 
 ## Licence
 
