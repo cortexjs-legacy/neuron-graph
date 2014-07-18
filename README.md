@@ -24,6 +24,15 @@ graph(pkg, {
 
 ## Options
 
+
+### cwd {string=}
+
+Current work directory for search 'cortex-shrinkwrap.json'.
+
+### built_root {string}
+
+Directory where to find installed packages.
+
 ### shrinkwrap {Object=}
 
 Shrinkwrap object
