@@ -12,22 +12,13 @@ function graph(pkg, options, callback ) {
   options || (options = {});
   (options.dependencyKeys) || (options.dependencyKeys = ['dependencies', 'asyncDependencies']);
 
-  (function (done) {
-    if (options.shrinkwrap) {
-      return done(null, options.shrinkwrap);
-    }
-
-    read_shrinkwrap(pkg, options, function (err, tree) {
-      if (err) {
-        return done(err);
-      }
-      
-      done(null, tree);
-    });
-  })(function (err, shrinkwrap) {
+  read_shrinkwrap(pkg, options, function (err, shrinkwrap) {
     if (err) {
       return callback(err);
     }
+
+    // update the version of shrinkwrap
+    shrinkwrap.version = pkg.version;
 
     var keys = options.dependencyKeys;
     var rs = graph(shrinkwrap, {
@@ -40,6 +31,10 @@ function graph(pkg, options, callback ) {
 
 
 function read_shrinkwrap (pkg, options, callback) {
+  if (options.shrinkwrap) {
+    return callback(null, options.shrinkwrap);
+  }
+
   var shrinkwrap_json = path.join(options.cwd, 'cortex-shrinkwrap.json');
 
   var keys = options.dependencyKeys;
