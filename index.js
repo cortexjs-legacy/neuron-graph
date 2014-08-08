@@ -6,7 +6,7 @@ var jf = require('jsonfile');
 var path = require('path');
 var fs = require('fs');
 var shrinkwrap = require('cortex-shrinkwrap');
-var graph = require('gen-graph');
+var gen_graph = require('gen-graph');
 
 function graph(pkg, options, callback ) {
   options || (options = {});
@@ -21,7 +21,7 @@ function graph(pkg, options, callback ) {
     shrinkwrap.version = pkg.version;
 
     var keys = options.dependencyKeys;
-    var rs = graph(shrinkwrap, {
+    var rs = gen_graph(shrinkwrap, {
       edge_keys : keys
     });
 
