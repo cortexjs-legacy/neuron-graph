@@ -39,7 +39,6 @@ function read_shrinkwrap (pkg, options, callback) {
 
   var keys = options.dependencyKeys;
   var shrink_options = {
-    stableOnly: options.stable_only || true,
     async: ~keys.indexOf('asyncDependencies'),
     dev: ~keys.indexOf('devDependencies')
   };
