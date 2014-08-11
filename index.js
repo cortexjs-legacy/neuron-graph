@@ -54,4 +54,4 @@ function read_shrinkwrap (pkg, options, callback) {
 
     shrinkwrap(pkg, options.built_root, shrink_options, callback);
   });
-};
+}

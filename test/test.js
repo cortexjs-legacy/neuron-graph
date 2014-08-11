@@ -1,5 +1,7 @@
 'use strict';
 
+/* global describe,it*/
+
 var expect = require('chai').expect;
 var graph = require('../');
 var fixture = require('test-fixture')();

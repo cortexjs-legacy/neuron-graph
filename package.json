@@ -1,11 +1,11 @@
 {
   "name": "neuron-graph",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dependency Handler, Graph Parser and Simplifier for CommonJs Modules",
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/jshint *.js *.json test/*.js",
-    "test": "./node_modules/.bin/mocha"
+    "test": "npm run lint && ./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
